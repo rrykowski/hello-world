@@ -1,0 +1,58 @@
+# This is my madlibs function demo for lols
+
+def madlibs_male(n1, n2, n3, v1, v2, v3, adj1, adj2, adj3, adv1)
+  puts """Here is your madlib:
+  #{n1} Was an employee at Commonwealth Financial Network.
+  When bored, he liked to #{v1} in the bathroom with Pops.
+  One day while he was #{adv1} strangling Anshu Gupta, #{n1} saw
+  something #{adj1} out of the corner of his eye. It was #{n2}, #{v2} with #{n3}
+  in the Bear Room. Just then Pops emerged while #{v3} from the bathroom, his #{adj2} shirt
+  stained and smelling of #{adj3} fish. Just another day at the office.
+"""
+end
+
+# I will eventually learn a much more eloquent way to accomplish this using some
+# dynamic find and replace or something, but this will work for now.
+def madlibs_female(n1, n2, n3, v1, v2, v3, adj1, adj2, adj3, adv1)
+  puts """Here is your madlib:
+  #{n1} Was an employee at Commonwealth Financial Network.
+  When bored, she liked to #{v1} in the bathroom with Pops.
+  One day while she was #{adv1} strangling Anshu Gupta, #{n1} saw
+  something #{adj1} out of the corner of her eye. It was #{n2}, #{v2} with #{n3}
+  in the Bear Room. Just then Pops emerged while #{v3} from the bathroom, his #{adj2} shirt
+  stained and smelling of #{adj3} fish. Just another day at the office.
+"""
+end
+
+prompt = "> "
+puts "Welcome to CFN Madlibs"
+print "Enter a name for your protagonist #{prompt}"
+n1 = gets.chomp
+print "Are they male or female? #{prompt}"
+gender = gets.chomp.downcase
+print "Enter a verb not ending in \"ing\" #{prompt}"
+v1 = gets.chomp
+print "Enter an adverb ending in \"ly\" #{prompt}"
+adv1 = gets.chomp
+print "Enter an adjective #{prompt}"
+adj1 = gets.chomp
+print "Enter another person's name #{prompt}"
+n2 = gets.chomp
+print "Enter a verb ending in \"ing\" #{prompt}"
+v2 = gets.chomp
+print "Enter another person's name #{prompt}"
+n3 = gets.chomp
+print "Enter a verb ending in \"ing\" #{prompt}"
+v3 = gets.chomp
+print "Enter a dark color #{prompt}"
+adj2 = gets.chomp
+print "Enter an adjective ending in \"ed\" #{prompt}"
+adj3 = gets.chomp
+
+if gender == "male"
+  madlibs_male(n1, n2, n3, v1, v2, v3, adj1, adj2, adj3, adv1)
+elsif gender == "female"
+  madlibs_female(n1, n2, n3, v1, v2, v3, adj1, adj2, adj3, adv1)
+else
+  puts "Sorry but my primitive error handling is telling you that you didn't\nenter male or female when asked earlier. Please start over."
+end
